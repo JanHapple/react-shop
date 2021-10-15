@@ -1,0 +1,50 @@
+.bg-img {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px auto;
+  width: 90%;
+  height: 86vh;
+  background-image: url(https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2019/11/27/98e47aee-b7d3-4a30-a914-635f01b4cb96/stride-push-pushing-forwards-totally-inc);
+  background-size: cover;
+  background-position: center bottom;
+  border-radius: 20px;
+  transition: .4s;
+}
+
+.bg-img:hover {
+  transform: scale(1.01, 1.01);
+}
+
+.bg-img:hover .enter {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.disclaimer {
+  margin: 0 0 20% 40%;
+  color: brown;
+  background: rgba(255, 255, 255);
+  font-size: 3rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.enter {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0 0;
+  padding: 15px;
+  color: brown;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 3rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: .4s;
+}
+
+
+.home-link {
+    text-decoration: none;
+}

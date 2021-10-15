@@ -1,0 +1,24 @@
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    cursor: pointer;
+    padding: .8rem;
+}
+
+.nav-link-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 600;
+    transition: .4s;
+}
+
+.nav-link-text:hover {
+    color: rgb(224, 16, 16);
+}

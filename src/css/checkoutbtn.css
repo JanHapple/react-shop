@@ -1,0 +1,24 @@
+.checkoutbtn {
+  font-size: 1.1rem;
+  background: transparent;
+  border: 2px solid white;
+  cursor: pointer;
+  color: brown;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.addToCart {
+  transition: 0.4s;
+}
+
+.checkoutbtn:hover {
+  background: rgba(128, 128, 128, 0.2);
+  transform: scale(1.2, 1.2);
+}
+
+.checkoutbtn:hover .addToCart {
+  color: rgb(224, 16, 16);
+}
