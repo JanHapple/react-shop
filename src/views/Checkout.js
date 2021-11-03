@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import "../css/checkout.css"
 import  Button  from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -6,6 +6,8 @@ import { Backspace } from '@material-ui/icons';
 import { Payment } from '@material-ui/icons';
 import { Card, MenuItem } from '@mui/material';
 import { Grid } from '@mui/material';
+
+// export const ShowPurchases = createContext();
 
 const Checkout = props => {
     
@@ -55,7 +57,7 @@ const Checkout = props => {
          <Grid container direction="row" justifyContent="center"
             alignItems="center">
             <Card sx={{ width: "60vw", padding:"40px" }}>
-                <form onSubmit={props.submit}>
+                <form onSubmit={props.submit} >
                     <h4>Shipping adress:</h4>
     
                     <Grid container spacing={2} >
@@ -107,13 +109,21 @@ const Checkout = props => {
                        
 
                     <Grid container direction="row" justifyContent="space-between" >    
+                       {/* <ShowPurchases.Provider
+                       value={{
+                           purchList: props.purchaselist
+                       }}
+                       > */}
                         <Button
                         href="/cart" 
                         variant="contained"
                         startIcon={<Backspace />} 
-                        style={{background: "#e6e6e6", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}>
+                        style={{background: "#e6e6e6", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
+                        >
                         back to Cart
                         </Button>
+                        {/* </ShowPurchases.Provider> */}
+                        
                         <Button 
                         variant="contained" 
                         endIcon={<Payment />}

@@ -323,6 +323,7 @@ const App = () => {
               errorOnBlur={errorOnBlur}
               formErrors={formErrors}
               submit={submitFormData}
+              purchaselist={purchase}
             />
           )}
         />

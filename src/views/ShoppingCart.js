@@ -29,7 +29,7 @@ const ShoppingCart = props => {
                     <h3 className="total-price">Price: {props.price} $</h3>
                     <button className="remove-all-btn" onClick={props.removeAll}>{deleteAll}</button>
                     <Link className="link" to="/checkout">
-                        <button className="checkout-btn">{checkout}</button>
+                        <button className="checkout-btn" purchaselist={props.purchaselist}>{checkout}</button>
                     </Link>
                 </footer>
             </main>
