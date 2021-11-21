@@ -7,9 +7,19 @@ import Storecontainer from "./views/Storecontainer";
 import ShoppingCart from "./views/ShoppingCart";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../src/css/app.css";
+// import { createTheme } from "@material-ui/core";
+// import { ThemeProvider } from "@mui/material";
 // import {  } from "@mui/material";
 
 export const ShowNumOfPurchases = createContext();
+
+// const newTheme = createTheme({
+//   palette: {
+//       primary: {
+//           main: "#a52a2a"
+//       }
+//   } 
+// })
 
 const App = () => {
   let productSite = [];
@@ -272,6 +282,7 @@ const App = () => {
   };
 
   return (
+    // <ThemeProvider theme={newTheme}>
     <Router>
       <Header purchaselist={purchase} numOfItems={numOfItems} />
       <Switch>
@@ -329,6 +340,7 @@ const App = () => {
         />
       </Switch>
     </Router>
+    // </ThemeProvider>
   );
 };
 

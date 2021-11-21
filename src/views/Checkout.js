@@ -1,12 +1,33 @@
-import React, { createContext } from 'react';
+import React from 'react';
+import { Link } from "react-router-dom";
 import "../css/checkout.css"
 import  Button  from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { Backspace } from '@material-ui/icons';
-import { Payment } from '@material-ui/icons';
-import { Card, MenuItem } from '@mui/material';
-import { Grid } from '@mui/material';
+import { Backspace, Payment } from '@material-ui/icons';
+import { Card, MenuItem, ThemeProvider, Grid } from '@mui/material';
+import { createTheme, makeStyles } from '@material-ui/core';
 
+const newTheme = createTheme(
+    {
+    palette: {
+        primary: {
+            main: "#a52a2a",
+        },
+        background: {
+            paper: "#e5e5e5"
+        }
+        
+    } 
+    }
+    
+)
+
+const useStyles = makeStyles({
+    txtfield: {
+        border: "none",
+        borderBottom: "solid 2px black"
+    }
+})
 // export const ShowPurchases = createContext();
 
 const Checkout = props => {
@@ -48,10 +69,10 @@ const Checkout = props => {
     ]
 
     
-
-
+    const classes = useStyles();
     return(
-        <>
+        
+    <ThemeProvider theme={newTheme}>
         <h1 className="checkout-heading">Checkout</h1>
          <main className="checkout-form">
          <Grid container direction="row" justifyContent="center"
@@ -62,9 +83,10 @@ const Checkout = props => {
     
                     <Grid container spacing={2} >
                         <Grid item xs={12} md={6}>
-                            <TextField id="firstName" sx={{width: "100%"}} label="First name" variant="standard" name="firstName" type="text" margin="normal" 
+                        
+                            <TextField className={classes.txtfield} id="firstName" sx={{width: "100%"}} label="First name" variant="standard" name="firstName" type="text" margin="normal"
                              value={props.userData.firstName} onChange={props.updateData} onBlur={props.errorOnBlur}></TextField>
-                            
+                        
                             <div className="error" ref={props.formErrors.firstNameError}>Please enter a valid firstname.</div>
                         </Grid>
                         <Grid item xs={12} md={6}>
@@ -109,23 +131,20 @@ const Checkout = props => {
                        
 
                     <Grid container direction="row" justifyContent="space-between" >    
-                       {/* <ShowPurchases.Provider
-                       value={{
-                           purchList: props.purchaselist
-                       }}
-                       > */}
-                        <Button
-                        href="/cart" 
-                        variant="contained"
-                        startIcon={<Backspace />} 
-                        style={{background: "#e6e6e6", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
-                        >
-                        back to Cart
-                        </Button>
-                        {/* </ShowPurchases.Provider> */}
+                       <Link className="Link" to="/cart">
+                            <Button
+                            href="/cart" 
+                            variant="contained"
+                            startIcon={<Backspace />} 
+                            style={{background: "#e6e6e6", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
+                            >
+                            back to Cart
+                            </Button>
+                        </Link>
                         
                         <Button 
                         variant="contained" 
+                        color="primary"
                         endIcon={<Payment />}
                         style={{background: "#e6e6e6", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
                         type="submit">NEXT</Button>
@@ -134,7 +153,7 @@ const Checkout = props => {
             </Card>
             </Grid>       
          </main>
-        </>
+    </ThemeProvider>
     )
 }
 
