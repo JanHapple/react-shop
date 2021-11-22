@@ -22,12 +22,13 @@ const newTheme = createTheme(
     
 )
 
-const useStyles = makeStyles({
-    txtfield: {
-        border: "none",
-        borderBottom: "solid 2px black"
-    }
-})
+// const useStyles = makeStyles({
+//     txtfield: {
+//         border: "solid 2px blue",
+//         borderBottom: "solid 1px black",
+        
+//     },
+// })
 // export const ShowPurchases = createContext();
 
 const Checkout = props => {
@@ -69,7 +70,7 @@ const Checkout = props => {
     ]
 
     
-    const classes = useStyles();
+    // const classes = useStyles();
     return(
         
     <ThemeProvider theme={newTheme}>
@@ -84,7 +85,7 @@ const Checkout = props => {
                     <Grid container spacing={2} >
                         <Grid item xs={12} md={6}>
                         
-                            <TextField className={classes.txtfield} id="firstName" sx={{width: "100%"}} label="First name" variant="standard" name="firstName" type="text" margin="normal"
+                            <TextField id="firstName" sx={{width: "100%"}} label="First name" variant="standard" name="firstName" type="text" margin="normal"
                              value={props.userData.firstName} onChange={props.updateData} onBlur={props.errorOnBlur}></TextField>
                         
                             <div className="error" ref={props.formErrors.firstNameError}>Please enter a valid firstname.</div>
@@ -131,12 +132,12 @@ const Checkout = props => {
                        
 
                     <Grid container direction="row" justifyContent="space-between" >    
-                       <Link className="Link" to="/cart">
+                       <Link className="Link" to="/cart" style={{textDecoration: "none"}}>
                             <Button
                             href="/cart" 
                             variant="contained"
                             startIcon={<Backspace />} 
-                            style={{background: "#e6e6e6", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
+                            style={{background: "#ffffff", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
                             >
                             back to Cart
                             </Button>
@@ -146,7 +147,7 @@ const Checkout = props => {
                         variant="contained" 
                         color="primary"
                         endIcon={<Payment />}
-                        style={{background: "#e6e6e6", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
+                        style={{background: "#ffffff", color: "#a52a2a", border: "none", fontWeight: "700", marginTop: "20px"}}
                         type="submit">NEXT</Button>
                     </Grid>               
                 </form>
